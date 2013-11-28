@@ -1,7 +1,7 @@
 class Bob
 
   def hey(phrase)
-    if phrase.end_with?('!')
+    if phrase.end_with?('!') && phrase.upcase == phrase
       'Woah, chill out!'
     elsif phrase.end_with?('?')
       'Sure.'
