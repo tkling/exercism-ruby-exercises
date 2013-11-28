@@ -1,14 +1,21 @@
 class Bob
-  attr_reader :phrase
-
-  def hey(input_phrase)
-    @phrase = input_phrase
-    response
+  def initialize(response_klass=TeenagerResponse)
+    @response_class = response_klass
   end
 
-  private
+  def hey(input_phrase)
+    @response_class.new(input_phrase).to_s
+  end
+end
 
-  def response
+class TeenagerResponse
+  attr_reader :phrase
+
+  def initialize(phrase)
+    @phrase = phrase
+  end
+
+  def to_s
     if question? && (only_digits? || !uppercase?)
       'Sure.'
     elsif whitespace?
@@ -19,6 +26,8 @@ class Bob
       'Whatever.'
     end
   end
+
+  private
 
   def question?
     phrase.end_with?('?')
