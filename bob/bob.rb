@@ -1,7 +1,7 @@
 class Bob
 
   def hey(arg)
-    'Whatever'
+    'Whatever.'
   end
 
 end
