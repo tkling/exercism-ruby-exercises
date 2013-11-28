@@ -1,7 +1,11 @@
 class Bob
 
-  def hey(arg)
-    'Whatever.'
+  def hey(phrase)
+    if phrase.end_with?('!')
+      'Woah, chill out!'
+    else
+      'Whatever.'
+    end
   end
 
 end
