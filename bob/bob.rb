@@ -1,5 +1,5 @@
 class Bob
-  def initialize(response_klass=TeenagerResponse)
+  def initialize(response_klass = TeenagerResponse)
     @response_class = response_klass
   end
 
