@@ -3,8 +3,10 @@ class Bob
 
   def hey(input_phrase)
     @phrase = input_phrase
-    if question? && (only_numbers? || !uppercase?)
+    if question? && (only_digits? || !uppercase?)
       'Sure.'
+    elsif whitespace?
+      'Fine. Be that way!'
     elsif uppercase? && non_digits?
       'Woah, chill out!'
     else
@@ -26,12 +28,16 @@ class Bob
     phrase_without_comma_spaces.match(/\D/)
   end
 
-  def only_numbers?
+  def only_digits?
     phrase_without_comma_spaces.match(/\d/)
   end
 
   def phrase_without_comma_spaces
     phrase.gsub(', ', String.new)
+  end
+
+  def whitespace?
+    phrase.split == Array.new
   end
 
 end
