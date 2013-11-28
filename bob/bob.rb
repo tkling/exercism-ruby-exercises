@@ -3,6 +3,12 @@ class Bob
 
   def hey(input_phrase)
     @phrase = input_phrase
+    response
+  end
+
+  private
+
+  def response
     if question? && (only_digits? || !uppercase?)
       'Sure.'
     elsif whitespace?
@@ -13,8 +19,6 @@ class Bob
       'Whatever.'
     end
   end
-
-  private
 
   def question?
     phrase.end_with?('?')
