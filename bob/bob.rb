@@ -50,7 +50,7 @@ class TeenagerResponse
   end
 
   def whitespace?
-    phrase.split == Array.new
+    phrase.split.empty?
   end
 
 end
